@@ -12,32 +12,58 @@ const argv = yargs
     .argv;
 
 // Libs
-const Network = require("../network.js");
-const { getAddress } = require("@harmony-js/crypto");
+const Network = require('../network.js');
+const { getAddress } = require('@harmony-js/crypto');
 
 // Vars
 const network = new Network(argv.network);
-network.hmy.wallet.addByPrivateKey(network.privateKeys.deployer);
+network.hmy.wallet.addByPrivateKey(network.accounts.deployer.private_key)
 
-async function deploy() {
-  let woneAddress = await deployContract('WONE');
-  let multicallAddress = await deployContract('Multicall');
+const contracts = {
+  // SafeMath: [],
+  // RouterEventEmitter: [],
+  // Multicall: [],
+  // Migrations: [],
 
-  console.log(`   WONE address: ${woneAddress} - ${getAddress(woneAddress).bech32}`);
-  console.log(`   Multicall address: ${multicallAddress} - ${getAddress(multicallAddress).bech32}`);
-  console.log(`   export NETWORK=${argv.network}; export WONE=${woneAddress}; export MULTICALL=${multicallAddress};`);
-  console.log(`   addresses: {"wone": "${woneAddress}", "uniswapV2Pair": "${multicallAddress}"}\n`);
+  // DeflatingHRC20: [10000000],
+
+  // IUniswapV2Callee: [],
+  // IUniswapV1Exchange: [],
+  // IUniswapV1Factory: [],
+  // IUniswapV2Factory: [],
+  // IUniswapV2Pair: [],
+  // IUniswapV2Router01: [],
+  // IUniswapV2Router02: [],
+  // IUniswapV2Migrator: [],
+
+  UniswapV2Router01: [network.accounts.deployer.address, process.env.WONE_ADDRESS],
+  UniswapV2Router02: [network.accounts.deployer.address, process.env.WONE_ADDRESS],
+  UniswapV2Migrator: [process.env.V1_FACTORY, process.env.ROUTER_1],
+  UniswapV2Library: [],
+  UniswapV2OracleLibrary: []
 }
 
-async function deployContract(contractName) {
-  let contractJson = require(`../../build/contracts/${contractName}.json`);
-  let contract = network.hmy.contracts.createContract(contractJson.abi);
-  contract.wallet.addByPrivateKey(network.privateKeys.deployer);
-  //contract.wallet.setSigner(network.privateKeys.deployer);
-  let deployOptions = { data: contractJson.bytecode };
+async function deploy() {
+  for (const contract in contracts) {
+    const args = contracts[contract];
+    const addr = await deployContract(contract, args);
+    console.log(`    Deployed contract ${contract}: ${addr} (${getAddress(addr).bech32})`)
+  }
+}
 
-  let response = await contract.methods.contractConstructor(deployOptions).send(network.gasOptions());
-  const contractAddress = response.transaction.receipt.contractAddress;
+async function deployContract(contractName, args) {
+  let contractJson = require(`../../build/contracts/${contractName}`)
+  // console.log(JSON.stringify(contractJson.abi))
+  let contract = network.hmy.contracts.createContract(contractJson.abi)
+  contract.wallet.addByPrivateKey(network.accounts.deployer.private_key)
+  // contract.wallet.setSigner(network.network.accounts.deployer.private_key);
+  let options = {
+    data: '0x' + contractJson.bytecode,
+    arguments: args
+  };
+
+  let response = await contract.methods.contractConstructor(options).send(network.gasOptions())
+  const contractAddress = response.transaction.receipt.contractAddress
   return contractAddress
 }
 
