@@ -6,7 +6,7 @@ import { solidity, MockProvider, createFixtureLoader, deployContract } from 'eth
 import { expandTo18Decimals, mineBlock, encodePrice } from './shared/utilities'
 import { v2Fixture } from './shared/fixtures'
 
-import ExampleSlidingWindowOracle from '../build/ExampleSlidingWindowOracle.json'
+import ExampleSlidingWindowOracle from '../build/contracts/ExampleSlidingWindowOracle.json'
 
 chai.use(solidity)
 
@@ -29,7 +29,7 @@ describe('ExampleSlidingWindowOracle', () => {
   let token0: Contract
   let token1: Contract
   let pair: Contract
-  let weth: Contract
+  let wone: Contract
   let factory: Contract
 
   async function addLiquidity(amount0: BigNumber = defaultToken0Amount, amount1: BigNumber = defaultToken1Amount) {
@@ -61,7 +61,7 @@ describe('ExampleSlidingWindowOracle', () => {
     token0 = fixture.token0
     token1 = fixture.token1
     pair = fixture.pair
-    weth = fixture.WETH
+    wone = fixture.WONE
     factory = fixture.factoryV2
   })
 
@@ -180,7 +180,7 @@ describe('ExampleSlidingWindowOracle', () => {
     })
 
     it('fails for invalid pair', async () => {
-      await expect(slidingWindowOracle.update(weth.address, token1.address)).to.be.reverted
+      await expect(slidingWindowOracle.update(wone.address, token1.address)).to.be.reverted
     })
   })
 
@@ -203,7 +203,7 @@ describe('ExampleSlidingWindowOracle', () => {
     })
 
     it('fails for invalid pair', async () => {
-      await expect(slidingWindowOracle.consult(weth.address, 0, token1.address)).to.be.reverted
+      await expect(slidingWindowOracle.consult(wone.address, 0, token1.address)).to.be.reverted
     })
 
     describe('happy path', () => {
