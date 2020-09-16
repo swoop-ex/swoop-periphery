@@ -16,8 +16,13 @@ do
   case $1 in
   --method) method="${2}" ; shift;;
   --network) network="${2}" ; shift;;
+  # Truffle
   --reset) reset=true;;
   --skip-dry-run) skip_dry_run=true;;
+  # Custom deployment
+  --factory) factory="${2}" ; shift;;
+  --wone) wone="${2}" ; shift;;
+  --multicall) multicall="${2}" ; shift;;
   -h|--help) usage; exit 1;;
   (--) shift; break;;
   (-*) usage; exit 1;;
@@ -60,8 +65,24 @@ truffle_deployment() {
 }
 
 hmy_deployment() {
-  echo "Deploying using hmy - network: ${network}"
-  node tools/deployment/deploy.js --network $network
+  factory_argument=""
+  if [ ! -z "$factory" ]; then
+    factory_argument="--factory ${factory}"
+  fi
+
+  wone_argument=""
+  if [ ! -z "$wone" ]; then
+    wone_argument="--wone ${wone}"
+  fi
+
+  multicall_argument=""
+  if [ ! -z "$multicall" ]; then
+    multicall_argument="--multicall ${multicall}"
+  fi
+
+  echo "Deploying using hmy - arguments: --network $network $factory_argument $wone_argument $multicall_argument"
+
+  node tools/deployment/deploy.js --network $network $factory_argument $wone_argument $multicall_argument
 }
 
 deploy() {

@@ -44,12 +44,10 @@ module.exports = class Network {
 
     this.accounts = {
       deployer: {
-        private_key: process.env[`${this.network.toUpperCase()}_PRIVATE_KEY`],
-        address: process.env[`${this.network.toUpperCase()}_ADDRESS`]
+        private_key: process.env[`${this.network.toUpperCase()}_PRIVATE_KEY`]
       },
       tester: {
-        private_key: process.env[`${this.network.toUpperCase()}_TEST_ACCOUNT_PRIVATE_KEY`],
-        address: process.env[`${this.network.toUpperCase()}_TEST_ACCOUNT_ADDRESS`]
+        private_key: process.env[`${this.network.toUpperCase()}_TEST_ACCOUNT_PRIVATE_KEY`]
       }
     }
   }
