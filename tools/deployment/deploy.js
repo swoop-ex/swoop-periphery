@@ -86,7 +86,7 @@ async function deployDependencies() {
 }
 
 async function deployFactory() {
-  const addr = await performContractDeployment(v2Factory.abi, [network.hmy.wallet.signer.address]);
+  const addr = await performContractDeployment(v2Factory, [network.hmy.wallet.signer.address]);
   console.log(`    Deployed contract UniswapV2Factory: ${addr} (${getAddress(addr).bech32})`)
   
   return addr
@@ -102,18 +102,19 @@ async function deployWONE() {
 
 async function deployContract(contractName, args) {
   let contractJson = require(`../../build/contracts/${contractName}`)
-  const contractAddress = await performContractDeployment(contractJson.abi, args)
+  const contractAddress = await performContractDeployment(contractJson, args)
 
   return contractAddress
 }
 
-async function performContractDeployment(abi, args) {
-  let contract = network.hmy.contracts.createContract(abi)
+async function performContractDeployment(contractJson, args) {
+  let contract = network.hmy.contracts.createContract(contractJson.abi)
   contract.wallet.addByPrivateKey(network.privateKeys.deployer)
   // contract.wallet.setSigner(network.privateKeys.deployer);
   
   let options = {
-    arguments: args
+    arguments: args,
+    data: '0x' + contractJson.bytecode
   };
 
   let response = await contract.methods.contractConstructor(options).send(network.gasOptions())
