@@ -70,7 +70,7 @@ async function deploy() {
     const addr = deployed[contract];
     env += `export ${contract.toUpperCase()}=${addr}; `
   }
-  console.log(`\n    ${env}`);
+  console.log(`\n    export NETWORK=${argv.network}; ${env}`);
 }
 
 async function deployDependencies() {
