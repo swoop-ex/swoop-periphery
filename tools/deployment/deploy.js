@@ -43,7 +43,7 @@ const { getAddress } = require('@harmony-js/crypto');
 
 // Vars
 const network = new Network(argv.network);
-network.hmy.wallet.addByPrivateKey(network.accounts.deployer.private_key)
+network.hmy.wallet.addByPrivateKey(network.privateKeys.deployer)
 
 const deployed = {};
 
@@ -109,8 +109,8 @@ async function deployContract(contractName, args) {
 
 async function performContractDeployment(abi, args) {
   let contract = network.hmy.contracts.createContract(abi)
-  contract.wallet.addByPrivateKey(network.accounts.deployer.private_key)
-  // contract.wallet.setSigner(network.network.accounts.deployer.private_key);
+  contract.wallet.addByPrivateKey(network.privateKeys.deployer)
+  // contract.wallet.setSigner(network.privateKeys.deployer);
   
   let options = {
     arguments: args
