@@ -1,4 +1,6 @@
-const v2Factory = require('@harmony-swoop/core/build/contracts/UniswapV2Factory.json');
+const uniswapV2FactoryArtifact = require('@harmony-swoop/core/build/contracts/UniswapV2Factory.json');
+const woneArtifact = require('@harmony-swoop/misc/build/contracts/WONE.json');
+const multicallArtifact = require('@harmony-swoop/misc/build/contracts/Multicall.json');
 
 require('dotenv').config()
 
@@ -54,10 +56,6 @@ async function deploy() {
     UniswapV2Router02: [factoryAddress, woneAddress],
   }
 
-  if (multiCallAddress == null || multiCallAddress == '') {
-    contracts['Multicall'] = [];
-  }
-
   for (const contract in contracts) {
     const args = contracts[contract];
     const addr = await deployContract(contract, args);
@@ -74,6 +72,11 @@ async function deploy() {
 }
 
 async function deployDependencies() {
+  if (multiCallAddress == null || multiCallAddress == '') {
+    multiCallAddress = await deployMulticall()
+  }
+  deployed['Multicall'] = multiCallAddress;
+  
   if (factoryAddress == null || factoryAddress == '') {
     factoryAddress = await deployFactory()
   }
@@ -85,17 +88,23 @@ async function deployDependencies() {
   deployed['WONE'] = woneAddress;
 }
 
+async function deployMulticall() {
+  const addr = await performContractDeployment(multicallArtifact, null);
+  console.log(`    Deployed contract Multicall: ${addr} (${getAddress(addr).bech32})`)
+  
+  return addr
+}
+
 async function deployFactory() {
-  const addr = await performContractDeployment(v2Factory, [network.hmy.wallet.signer.address]);
+  const addr = await performContractDeployment(uniswapV2FactoryArtifact, [network.hmy.wallet.signer.address]);
   console.log(`    Deployed contract UniswapV2Factory: ${addr} (${getAddress(addr).bech32})`)
   
   return addr
 }
 
 async function deployWONE() {
-  const contract = 'WONE';
-  const addr = await deployContract(contract, []);
-  console.log(`    Deployed contract ${contract}: ${addr} (${getAddress(addr).bech32})`)
+  const addr = await performContractDeployment(woneArtifact, null);
+  console.log(`    Deployed contract WONE: ${addr} (${getAddress(addr).bech32})`)
   
   return addr
 }
@@ -113,9 +122,12 @@ async function performContractDeployment(contractJson, args) {
   // contract.wallet.setSigner(network.privateKeys.deployer);
   
   let options = {
-    arguments: args,
     data: '0x' + contractJson.bytecode
   };
+
+  if (args != null) {
+    options['arguments'] = args
+  }
 
   let response = await contract.methods.contractConstructor(options).send(network.gasOptions())
   const contractAddress = response.transaction.receipt.contractAddress

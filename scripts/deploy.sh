@@ -67,22 +67,22 @@ truffle_deployment() {
 hmy_deployment() {
   factory_argument=""
   if [ ! -z "$factory" ]; then
-    factory_argument="--factory ${factory}"
+    factory_argument=" --factory ${factory}"
   fi
 
   wone_argument=""
   if [ ! -z "$wone" ]; then
-    wone_argument="--wone ${wone}"
+    wone_argument=" --wone ${wone}"
   fi
 
   multicall_argument=""
   if [ ! -z "$multicall" ]; then
-    multicall_argument="--multicall ${multicall}"
+    multicall_argument=" --multicall ${multicall}"
   fi
 
-  echo "Deploying using hmy - arguments: --network $network $factory_argument $wone_argument $multicall_argument"
+  echo "Deploying using hmy - arguments: --network ${network}${factory_argument}${wone_argument}${multicall_argument}"
 
-  node tools/deployment/deploy.js --network $network $factory_argument $wone_argument $multicall_argument
+  node tools/deployment/deploy.js --network ${network}${factory_argument}${wone_argument}${multicall_argument}
 }
 
 deploy() {

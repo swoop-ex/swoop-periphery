@@ -3,8 +3,7 @@ rm -rf build/abi
 mkdir -p build/abi
 
 contracts=(
-WONE
-Multicall
+UniswapV2Router02
 )
 
 for contract in "${contracts[@]}"; do
