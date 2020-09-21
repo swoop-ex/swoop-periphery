@@ -40,12 +40,12 @@ var woneAddress = argv.wone;
 var multiCallAddress = argv.multicall;
 
 // Libs
-const Network = require('../network.js');
+const { NetworkEnv } = require("@harmony-swoop/utils");
 const { getAddress } = require('@harmony-js/crypto');
 
 // Vars
-const network = new Network(argv.network);
-network.hmy.wallet.addByPrivateKey(network.privateKeys.deployer)
+const network = new NetworkEnv(argv.network);
+network.client.wallet.addByPrivateKey(network.accounts.deployer.privateKey);
 
 const deployed = {};
 
@@ -96,7 +96,7 @@ async function deployMulticall() {
 }
 
 async function deployFactory() {
-  const addr = await performContractDeployment(uniswapV2FactoryArtifact, [network.hmy.wallet.signer.address]);
+  const addr = await performContractDeployment(uniswapV2FactoryArtifact, [network.client.wallet.signer.address]);
   console.log(`    Deployed contract UniswapV2Factory: ${addr} (${getAddress(addr).bech32})`)
   
   return addr
@@ -117,8 +117,8 @@ async function deployContract(contractName, args) {
 }
 
 async function performContractDeployment(contractJson, args) {
-  let contract = network.hmy.contracts.createContract(contractJson.abi)
-  contract.wallet.addByPrivateKey(network.privateKeys.deployer)
+  let contract = network.client.contracts.createContract(contractJson.abi)
+  contract.wallet.addByPrivateKey(network.accounts.deployer.privateKey)
   // contract.wallet.setSigner(network.privateKeys.deployer);
   
   let options = {

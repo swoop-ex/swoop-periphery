@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@harmony-js/core": "^0.1.50",
+    "@harmony-swoop/utils": "^1.0.0",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
