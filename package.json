@@ -1,6 +1,6 @@
 {
   "name": "@harmony-swoop/periphery",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
   "engines": {
     "node": ">=10"
@@ -14,13 +14,12 @@
     "build",
     "contracts"
   ],
-  "dependencies": {
-    "@harmony-swoop/core": "1.1.1",
-    "@harmony-swoop/lib": "1.1.4",
-    "@harmony-swoop/misc": "harmony-one/swoop-misc"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@harmony-js/core": "^0.1.50",
+    "@harmony-swoop/core": "^1.1.1",
+    "@harmony-swoop/lib": "^1.1.4",
+    "@harmony-swoop/misc": "^1.0.0",
     "@harmony-swoop/utils": "^1.0.0",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
