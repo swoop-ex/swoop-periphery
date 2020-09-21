@@ -130,19 +130,20 @@
     "@types/bn.js" "^4.11.3"
     bn.js "^4.11.8"
 
-"@harmony-swoop/core@1.1.1":
+"@harmony-swoop/core@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@harmony-swoop/core/-/core-1.1.1.tgz#19d238ac8547a4d45283e792c20d1857d553a0bd"
   integrity sha512-AATshDAWjVGT8PjXS2sJboG0WTpjRCglG4GbgDvpB1JfxPtZa+Lo6n24EdgltEEyd5JvXdGBfGH1Ae8aQnV7Nw==
 
-"@harmony-swoop/lib@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@harmony-swoop/lib/-/lib-1.1.4.tgz#b583ee3aa0677363d78ecc7fd5c6bfe12975df99"
-  integrity sha512-38ngupmxVqDFAkWn9G9mKJRd7UF04VfIaikBsymJBm8TIBGRwp5GMNNu6Nnxakcib2scxtbhOvjTuwq59RjPzg==
+"@harmony-swoop/lib@^1.1.4":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@harmony-swoop/lib/-/lib-1.1.5.tgz#27fbfc3ef64f89eb81e82152b0f0f38fbfdb7b45"
+  integrity sha512-DMX/ziBtqONyr4L1t1F+qGEf7UmVuRYeY4eH38Y/+MYWoDQNyZfrax8KrsKh0gQP/WDYQa0QTUrED6O7TzxfaA==
 
-"@harmony-swoop/misc@harmony-one/swoop-misc":
-  version "1.0.0"
-  resolved "https://codeload.github.com/harmony-one/swoop-misc/tar.gz/861fdd2b37c98bf114f191d31fe85f8ee00d2ece"
+"@harmony-swoop/misc@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@harmony-swoop/misc/-/misc-1.0.1.tgz#419d9e4ebf041a0920df89ecedeb25a661ad2389"
+  integrity sha512-wQR+IjfsLnHvLgWpQFl0QLYcEwoqGUd3XVJRvqkEhILT4WLHYeqjumZl9tas1AsrvuwCPt71DtozSvCGhphrxA==
 
 "@harmony-swoop/utils@^1.0.0":
   version "1.0.4"

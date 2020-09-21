@@ -15,13 +15,13 @@
     "contracts"
   ],
   "dependencies": {
-    "@harmony-swoop/core": "1.1.1",
-    "@harmony-swoop/lib": "1.1.4",
-    "@harmony-swoop/misc": "harmony-one/swoop-misc"
   },
   "devDependencies": {
     "@harmony-js/core": "^0.1.50",
     "@harmony-swoop/utils": "^1.0.0",
+    "@harmony-swoop/core": "^1.1.1",
+    "@harmony-swoop/lib": "^1.1.4",
+    "@harmony-swoop/misc": "^1.0.0",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
