@@ -16,11 +16,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@harmony-js/core": "^0.1.50",
-    "@harmony-swoop/core": "^1.1.1",
-    "@harmony-swoop/lib": "^1.1.4",
-    "@harmony-swoop/misc": "^1.0.0",
-    "@harmony-swoop/utils": "^1.0.0",
+    "@harmony-js/core": "^0.1.55",
+    "@harmony-swoop/core": "^1.1.6",
+    "@harmony-swoop/lib": "^1.1.7",
+    "@harmony-swoop/misc": "^1.0.1",
+    "@harmony-swoop/utils": "^1.0.4",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
@@ -45,8 +45,7 @@
     "compile": "waffle .waffle.json",
     "postcompile": "yarn copy-v1-artifacts",
     "pretest": "yarn compile",
-    "test": "mocha",
-    "prepublishOnly": "yarn test"
+    "test": "mocha"
   },
   "license": "GPL-3.0-or-later"
 }

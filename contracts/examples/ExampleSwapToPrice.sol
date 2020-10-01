@@ -4,7 +4,7 @@ import '@harmony-swoop/core/contracts/interfaces/IUniswapV2Pair.sol';
 import '@harmony-swoop/lib/contracts/libraries/Babylonian.sol';
 import '@harmony-swoop/lib/contracts/libraries/TransferHelper.sol';
 
-import '../interfaces/IHRC20.sol';
+import '../interfaces/IERC20.sol';
 import '../interfaces/IUniswapV2Router01.sol';
 import '../libraries/SafeMath.sol';
 import '../libraries/UniswapV2Library.sol';
