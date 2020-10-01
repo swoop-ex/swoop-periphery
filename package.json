@@ -43,7 +43,8 @@
     "copy-v1-artifacts": "ncp ./buildV1 ./build",
     "precompile": "yarn clean",
     "compile": "waffle .waffle.json",
-    "postcompile": "yarn copy-v1-artifacts",
+    "abi": "./scripts/abi.sh",
+    "postcompile": "yarn abi && yarn copy-v1-artifacts",
     "pretest": "yarn compile",
     "test": "mocha"
   },

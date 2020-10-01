@@ -2,7 +2,14 @@
 
 # Contracts to extract the ABI for:
 contracts=(
+  ERC20
+  IERC20
+  WETH9
+  IWETH
   UniswapV2Router02
+  IUniswapV2Router02
+  IUniswapV2Factory
+  IUniswapV2Pair
 )
 
 usage() {
