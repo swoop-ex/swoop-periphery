@@ -1,4 +1,3 @@
-const uniswapV2FactoryArtifact = require('@harmony-swoop/core/build/contracts/UniswapV2Factory.json');
 const woneArtifact = require('@harmony-swoop/misc/build/contracts/WONE.json');
 const multicallArtifact = require('@harmony-swoop/misc/build/contracts/Multicall.json');
 
@@ -16,8 +15,7 @@ const argv = yargs
     .option('factory', {
       alias: 'f',
       description: 'The address of the UniswapV2Factory',
-      type: 'string',
-      default: process.env.UNISWAPV2FACTORY
+      type: 'string'
     })
     .option('wone', {
       alias: 'w',
@@ -38,6 +36,11 @@ const argv = yargs
 var factoryAddress = argv.factory;
 var woneAddress = argv.wone;
 var multiCallAddress = argv.multicall;
+
+if (factoryAddress == null || factoryAddress == '') {
+  console.log('You must supply a factory address using --factory CONTRACT_ADDRESS or -f CONTRACT_ADDRESS!');
+  process.exit(0);
+}
 
 // Libs
 const { NetworkEnv } = require("@harmony-swoop/utils");
@@ -77,11 +80,6 @@ async function deployDependencies() {
   }
   deployed['Multicall'] = multiCallAddress;
   
-  if (factoryAddress == null || factoryAddress == '') {
-    factoryAddress = await deployFactory()
-  }
-  deployed['UniswapV2Factory'] = factoryAddress;
-  
   if (woneAddress == null || woneAddress == '') {
     woneAddress = await deployWONE();
   }
@@ -91,13 +89,6 @@ async function deployDependencies() {
 async function deployMulticall() {
   const addr = await performContractDeployment(multicallArtifact, null);
   console.log(`    Deployed contract Multicall: ${addr} (${getAddress(addr).bech32})`)
-  
-  return addr
-}
-
-async function deployFactory() {
-  const addr = await performContractDeployment(uniswapV2FactoryArtifact, [network.client.wallet.signer.address]);
-  console.log(`    Deployed contract UniswapV2Factory: ${addr} (${getAddress(addr).bech32})`)
   
   return addr
 }
