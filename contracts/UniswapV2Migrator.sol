@@ -1,6 +1,6 @@
 pragma solidity =0.6.6;
 
-import '@harmony-swoop/lib/contracts/libraries/TransferHelper.sol';
+import '@swoop-exchange/lib/contracts/libraries/TransferHelper.sol';
 
 import './interfaces/IUniswapV2Migrator.sol';
 import './interfaces/V1/IUniswapV1Factory.sol';

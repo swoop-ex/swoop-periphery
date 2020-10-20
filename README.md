@@ -1,11 +1,11 @@
 # Uniswap V2
 
 [![Actions Status](https://github.com/harmony-one/swoop-periphery/workflows/CI/badge.svg)](https://github.com/harmony-one/swoop-periphery/actions)
-[![npm](https://img.shields.io/npm/v/@harmony-swoop/periphery?style=flat-square)](https://npmjs.com/package/@harmony-swoop/periphery)
+[![npm](https://img.shields.io/npm/v/@swoop-exchange/periphery?style=flat-square)](https://npmjs.com/package/@swoop-exchange/periphery)
 
 In-depth documentation on Uniswap V2 is available at [uniswap.org](https://uniswap.org/docs).
 
-The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@harmony-swoop/periphery@latest/).
+The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@swoop-exchange/periphery@latest/).
 
 # Local Development
 
