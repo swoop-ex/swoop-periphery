@@ -1,5 +1,5 @@
-const woneArtifact = require('@harmony-swoop/misc/build/contracts/WONE.json');
-const multicallArtifact = require('@harmony-swoop/misc/build/contracts/Multicall.json');
+const woneArtifact = require('@swoop-exchange/misc/build/contracts/WONE.json');
+const multicallArtifact = require('@swoop-exchange/misc/build/contracts/Multicall.json');
 
 require('dotenv').config()
 
@@ -43,7 +43,7 @@ if (factoryAddress == null || factoryAddress == '') {
 }
 
 // Libs
-const { NetworkEnv } = require("@harmony-swoop/utils");
+const { NetworkEnv } = require("@swoop-exchange/utils");
 const { getAddress } = require('@harmony-js/crypto');
 
 // Vars

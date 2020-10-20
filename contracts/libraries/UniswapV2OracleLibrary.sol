@@ -1,7 +1,7 @@
 pragma solidity >=0.5.0;
 
-import '@harmony-swoop/core/contracts/interfaces/IUniswapV2Pair.sol';
-import '@harmony-swoop/lib/contracts/libraries/FixedPoint.sol';
+import '@swoop-exchange/core/contracts/interfaces/IUniswapV2Pair.sol';
+import '@swoop-exchange/lib/contracts/libraries/FixedPoint.sol';
 
 // library with helper methods for oracles that are concerned with computing average prices
 library UniswapV2OracleLibrary {

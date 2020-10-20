@@ -1,8 +1,8 @@
 pragma solidity =0.6.6;
 
-import '@harmony-swoop/core/contracts/interfaces/IUniswapV2Pair.sol';
-import '@harmony-swoop/lib/contracts/libraries/Babylonian.sol';
-import '@harmony-swoop/lib/contracts/libraries/TransferHelper.sol';
+import '@swoop-exchange/core/contracts/interfaces/IUniswapV2Pair.sol';
+import '@swoop-exchange/lib/contracts/libraries/Babylonian.sol';
+import '@swoop-exchange/lib/contracts/libraries/TransferHelper.sol';
 
 import '../interfaces/IERC20.sol';
 import '../interfaces/IUniswapV2Router01.sol';

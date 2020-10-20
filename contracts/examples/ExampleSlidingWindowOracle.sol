@@ -1,8 +1,8 @@
 pragma solidity =0.6.6;
 
-import '@harmony-swoop/core/contracts/interfaces/IUniswapV2Factory.sol';
-import '@harmony-swoop/core/contracts/interfaces/IUniswapV2Pair.sol';
-import '@harmony-swoop/lib/contracts/libraries/FixedPoint.sol';
+import '@swoop-exchange/core/contracts/interfaces/IUniswapV2Factory.sol';
+import '@swoop-exchange/core/contracts/interfaces/IUniswapV2Pair.sol';
+import '@swoop-exchange/lib/contracts/libraries/FixedPoint.sol';
 
 import '../libraries/SafeMath.sol';
 import '../libraries/UniswapV2Library.sol';
