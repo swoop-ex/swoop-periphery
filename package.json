@@ -1,6 +1,6 @@
 {
   "name": "@swoop-exchange/periphery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
   "engines": {
     "node": ">=10"
