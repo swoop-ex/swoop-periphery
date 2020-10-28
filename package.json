@@ -5,10 +5,10 @@
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://swoop.demo.harmony.one",
+  "homepage": "https://swoop.demo.---",
   "repository": {
     "type": "git",
-    "url": "https://github.com/harmony-one/swoop-periphery"
+    "url": "https://github.com/swoop-ex/swoop-periphery"
   },
   "files": [
     "build",
