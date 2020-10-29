@@ -347,25 +347,25 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@swoop-exchange/core@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@swoop-exchange/core/-/core-1.0.3.tgz#57c959eb89deeb577694cdb24fad9ca079326f22"
-  integrity sha512-DVGNLmvXK8/wwZVlzndu0pDLY+Fa4AuWfNf4mkRVIa/pcBFMjnyrfw79id/La4G7yaz7NVaRqYBVFlwJrVlJPg==
+"@swoop-exchange/core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@swoop-exchange/core/-/core-1.1.0.tgz#a9d5a5ec45748eb38be66445f681cdc7bd9ad148"
+  integrity sha512-t3+kCHdBpZ3hByjBjFLHGKpxYlYB+u+72NzUPAzdJpFnTlNAO52rLg+tMytAilrUX9lSLS7v+S0qOZ042PoZXQ==
 
-"@swoop-exchange/lib@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@swoop-exchange/lib/-/lib-1.0.0.tgz#7f12a377539408cd1316fbcb791fc09840e4905b"
-  integrity sha512-OaZcl5Zr2JFhb6VF/eDiS5gcZYbhx9gThiv+5/VuGG1YkwudhCzcm2Xgx9uYLQp3mKaHYpQPs2y7ON01Sg1T+Q==
+"@swoop-exchange/lib@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@swoop-exchange/lib/-/lib-1.1.0.tgz#9a00cc43fea813e4fa1da01dc4c5e056359054ed"
+  integrity sha512-itur5DvkUWkWpIH+i3YsBtmJ8KP4t/EkUzIj7TORLbbe5K9iAjY/Y+vGs2lK5uNYNbVxOwU20qhFJ179ANwNmA==
 
-"@swoop-exchange/misc@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@swoop-exchange/misc/-/misc-1.0.0.tgz#5399e1e5a8da268bc3f6b4fbfbfabc901f5a41ad"
-  integrity sha512-QPBezNccMYUtjlkA7fzxgz3nmjLfLleVR9hDYzMJS2rmWSkOCu5m1nYI9WEwwc3JwS6JZogZR3xVx647WyPZSg==
+"@swoop-exchange/misc@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@swoop-exchange/misc/-/misc-1.1.0.tgz#7fed05a3cb4eeae82193909358447fa4cc652500"
+  integrity sha512-WHKs4aE4UdkFh5KEE/xxxXirVN9gZ6jN32b2V1Y0eww8UahBs0Lz++VIKCaiIu8UrCZe6+Us5UFDjZix1dZA1w==
 
-"@swoop-exchange/utils@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@swoop-exchange/utils/-/utils-1.0.0.tgz#4ad569b19bb241bbe9991d3e75827756e3cb755a"
-  integrity sha512-rCN2YF6EmabadnygOGKd+w5fxILWktYvvGmUsyZg8jefbBchHRVa+1s94CIy4KspjkozPReN4X4xAPcKDDNeFg==
+"@swoop-exchange/utils@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@swoop-exchange/utils/-/utils-1.1.0.tgz#a11cf243e25708dcdd2667d18b074ccc9d617fe2"
+  integrity sha512-2Tgf96lTkyP3z1YhPDDGfQmRSXg52OUMpCYKHjGlF8y+C2vY9w7rQvcHAA06hUFbiOBYL+lLZQ+sjeSXqSqqFA==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
