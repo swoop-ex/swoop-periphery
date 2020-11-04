@@ -357,10 +357,10 @@
   resolved "https://registry.yarnpkg.com/@swoop-exchange/lib/-/lib-1.1.0.tgz#9a00cc43fea813e4fa1da01dc4c5e056359054ed"
   integrity sha512-itur5DvkUWkWpIH+i3YsBtmJ8KP4t/EkUzIj7TORLbbe5K9iAjY/Y+vGs2lK5uNYNbVxOwU20qhFJ179ANwNmA==
 
-"@swoop-exchange/misc@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@swoop-exchange/misc/-/misc-1.1.0.tgz#7fed05a3cb4eeae82193909358447fa4cc652500"
-  integrity sha512-WHKs4aE4UdkFh5KEE/xxxXirVN9gZ6jN32b2V1Y0eww8UahBs0Lz++VIKCaiIu8UrCZe6+Us5UFDjZix1dZA1w==
+"@swoop-exchange/misc@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@swoop-exchange/misc/-/misc-1.1.1.tgz#577fc368d39498afd1d98e955a2cb89e872f667e"
+  integrity sha512-KnJzmC8dTwHptaG9yFwwb7XFzJswGEwjyYn9+sWZ2zfOM9GNF0MCIQJu1DNZOlVcIbVN/moi6edcgC2o50Ig2w==
 
 "@swoop-exchange/utils@^1.1.0":
   version "1.1.0"
